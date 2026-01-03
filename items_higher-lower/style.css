@@ -186,3 +186,55 @@ h1 { font-weight: 900; letter-spacing: -2px; margin-bottom: 5px; font-size: 3.5r
     .img-container { height: 200px; }
     h1 { font-size: 2.5rem; }
 }
+/* --- PRZYCISK POWROTU (HOME) --- */
+.btn-home {
+    position: fixed; /* Przyklejony do ekranu */
+    top: 25px;
+    left: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 20px;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000; /* Zawsze na wierzchu */
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn-home:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.btn-home i {
+    font-size: 1rem;
+}
+
+/* Responsywność - na telefonach tylko ikona */
+@media (max-width: 600px) {
+    .btn-home {
+        top: 15px;
+        left: 15px;
+        padding: 12px; /* Kwadratowy przycisk */
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        justify-content: center;
+    }
+    
+    .btn-home span {
+        display: none; /* Ukryj napis "MENU" na małym ekranie */
+    }
+    
+    .btn-home i {
+        font-size: 1.1rem;
+    }
+}
