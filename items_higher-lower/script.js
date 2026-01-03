@@ -1,36 +1,36 @@
-/* --- BAZA DANYCH: PRICE-DLE (POPRAWIONE ZDJĘCIA) --- */
+/* --- BAZA DANYCH: PRICE-DLE (STABILNE LINKI) --- */
 const itemsDB = [
     // Elektronika
-    { name: "PlayStation 5", val: 499, img: "https://upload.wikimedia.org/wikipedia/commons/1/1b/PlayStation_5_and_DualSense_with_transparent_background.png" },
-    { name: "iPhone 15 Pro Max", val: 1199, img: "https://upload.wikimedia.org/wikipedia/commons/c/c3/IPhone_15_Pro_Blue_Titanium.svg" },
-    { name: "MacBook Pro 16", val: 2499, img: "https://upload.wikimedia.org/wikipedia/commons/b/b7/MacBook_Pro_14-inch_%282021%29.jpg" },
-    { name: "Samsung Z Fold 5", val: 1799, img: "https://upload.wikimedia.org/wikipedia/commons/7/77/Samsung_Galaxy_Z_Fold5_Icy_Blue.jpg" },
-    { name: "Apple Vision Pro", val: 3499, img: "https://upload.wikimedia.org/wikipedia/commons/5/52/Apple_Vision_Pro_-_frontal_view.jpg" },
-    { name: "Karta RTX 4090", val: 1599, img: "https://upload.wikimedia.org/wikipedia/commons/2/22/Nvidia_GeForce_RTX_4090_Founders_Edition.jpg" },
-    { name: "Słuchawki AirPods Max", val: 549, img: "https://upload.wikimedia.org/wikipedia/commons/4/42/AirPods_Max_Pink.jpg" },
+    { name: "PlayStation 5", val: 499, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/PlayStation_5_and_DualSense_with_transparent_background.png/640px-PlayStation_5_and_DualSense_with_transparent_background.png" },
+    { name: "iPhone 15 Pro Max", val: 1199, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/IPhone_15_Pro_Blue_Titanium.svg/440px-IPhone_15_Pro_Blue_Titanium.svg.png" },
+    { name: "MacBook Pro 16", val: 2499, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MacBook_Pro_14-inch_%282021%29.jpg/640px-MacBook_Pro_14-inch_%282021%29.jpg" },
+    { name: "Samsung Z Fold 5", val: 1799, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Samsung_Galaxy_Z_Fold5_Icy_Blue.jpg/640px-Samsung_Galaxy_Z_Fold5_Icy_Blue.jpg" },
+    { name: "Apple Vision Pro", val: 3499, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Apple_Vision_Pro_-_frontal_view.jpg/640px-Apple_Vision_Pro_-_frontal_view.jpg" },
+    { name: "Karta RTX 4090", val: 1599, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Nvidia_GeForce_RTX_4090_Founders_Edition.jpg/640px-Nvidia_GeForce_RTX_4090_Founders_Edition.jpg" },
+    { name: "Słuchawki AirPods Max", val: 549, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/AirPods_Max_Pink.jpg/640px-AirPods_Max_Pink.jpg" },
     
     // Samochody
-    { name: "Tesla Model S Plaid", val: 89990, img: "https://upload.wikimedia.org/wikipedia/commons/1/14/2018_Tesla_Model_S_75D.jpg" },
-    { name: "Porsche 911 GT3", val: 182900, img: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Porsche_992_GT3_IAA_2021_1X7A0225.jpg" },
-    { name: "Ferrari F40", val: 2500000, img: "https://upload.wikimedia.org/wikipedia/commons/c/cb/F40_ferrari_20090509.jpg" },
-    { name: "Lamborghini Huracán", val: 249865, img: "https://upload.wikimedia.org/wikipedia/commons/e/e5/2014-03-04_Geneva_Motor_Show_1379.JPG" },
-    { name: "Rolls-Royce Phantom", val: 493000, img: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Rolls-Royce_Phantom_VIII_IMG_4472.jpg" },
-    { name: "Ford F-150 Lightning", val: 55974, img: "https://upload.wikimedia.org/wikipedia/commons/7/73/2022_Ford_F-150_Lightning_Lariat_in_Iced_Blue_Silver%2C_front_left.jpg" },
+    { name: "Tesla Model S Plaid", val: 89990, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/2018_Tesla_Model_S_75D.jpg/640px-2018_Tesla_Model_S_75D.jpg" },
+    { name: "Porsche 911 GT3", val: 182900, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Porsche_992_GT3_IAA_2021_1X7A0225.jpg/640px-Porsche_992_GT3_IAA_2021_1X7A0225.jpg" },
+    { name: "Ferrari F40", val: 2500000, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/F40_ferrari_20090509.jpg/640px-F40_ferrari_20090509.jpg" },
+    { name: "Lamborghini Huracán", val: 249865, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/2014-03-04_Geneva_Motor_Show_1379.JPG/640px-2014-03-04_Geneva_Motor_Show_1379.JPG" },
+    { name: "Rolls-Royce Phantom", val: 493000, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Rolls-Royce_Phantom_VIII_IMG_4472.jpg/640px-Rolls-Royce_Phantom_VIII_IMG_4472.jpg" },
+    { name: "Ford F-150 Lightning", val: 55974, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/2022_Ford_F-150_Lightning_Lariat_in_Iced_Blue_Silver%2C_front_left.jpg/640px-2022_Ford_F-150_Lightning_Lariat_in_Iced_Blue_Silver%2C_front_left.jpg" },
 
     // Luksus
-    { name: "Rolex Submariner", val: 10250, img: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Rolex_Submariner.jpg" },
-    { name: "Omega Speedmaster", val: 7000, img: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Omega_Speedmaster_Professional_Moonwatch_Chronograph.jpg" },
-    { name: "Patek Philippe Nautilus", val: 35000, img: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Patek_Philippe_Nautilus_5711_1A-010.jpg" },
-    { name: "Bransoletka Cartier", val: 7350, img: "https://upload.wikimedia.org/wikipedia/commons/6/67/Cartier_Love_Bracelet.jpg" },
-    { name: "Torebka Birkin", val: 28000, img: "https://upload.wikimedia.org/wikipedia/commons/7/7a/Hermes_Birkin_Bag_Black.jpg" },
-    { name: "Buty Nike Air Mag", val: 50000, img: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Nike_Air_Mag.jpg" },
+    { name: "Rolex Submariner", val: 10250, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Rolex_Submariner.jpg/440px-Rolex_Submariner.jpg" },
+    { name: "Omega Speedmaster", val: 7000, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Omega_Speedmaster_Professional_Moonwatch_Chronograph.jpg/440px-Omega_Speedmaster_Professional_Moonwatch_Chronograph.jpg" },
+    { name: "Patek Philippe Nautilus", val: 35000, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Patek_Philippe_Nautilus_5711_1A-010.jpg/440px-Patek_Philippe_Nautilus_5711_1A-010.jpg" },
+    { name: "Bransoletka Cartier", val: 7350, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Cartier_Love_Bracelet.jpg/640px-Cartier_Love_Bracelet.jpg" },
+    { name: "Torebka Birkin", val: 28000, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Hermes_Birkin_Bag_Black.jpg/640px-Hermes_Birkin_Bag_Black.jpg" },
+    { name: "Buty Nike Air Mag", val: 50000, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Nike_Air_Mag.jpg/640px-Nike_Air_Mag.jpg" },
 
     // Codzienne / Inne
-    { name: "Big Mac (USA)", val: 5.69, img: "https://upload.wikimedia.org/wikipedia/commons/6/66/Big_Mac_hamburger.jpg" },
-    { name: "Netflix (1 miesiąc)", val: 23, img: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" },
-    { name: "Spotify (1 miesiąc)", val: 11, img: "https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" },
-    { name: "Starbucks Latte", val: 5.50, img: "https://upload.wikimedia.org/wikipedia/commons/d/d8/Starbucks_Coffee_Latte.jpg" },
-    { name: "Bilet do kina (USA)", val: 15, img: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Ticket_stub.png" }
+    { name: "Big Mac (USA)", val: 5.69, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Big_Mac_hamburger.jpg/640px-Big_Mac_hamburger.jpg" },
+    { name: "Netflix (1 miesiąc)", val: 23, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/640px-Netflix_2015_logo.svg.png" },
+    { name: "Spotify (1 miesiąc)", val: 11, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/480px-Spotify_logo_without_text.svg.png" },
+    { name: "Starbucks Latte", val: 5.50, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Starbucks_Coffee_Latte.jpg/480px-Starbucks_Coffee_Latte.jpg" },
+    { name: "Bilet do kina (USA)", val: 15, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Ticket_stub.png/640px-Ticket_stub.png" }
 ];
 
 const game = {
@@ -49,7 +49,15 @@ const game = {
         this.ui.best.textContent = localStorage.getItem('price_highscore') || 0;
         this.state.left = this.getRandom();
         this.state.right = this.getSimilar(this.state.left);
+        this.setupImageErrorHandling();
         this.render();
+    },
+
+    // ZABEZPIECZENIE PRZED BRAKIEM ZDJĘĆ
+    setupImageErrorHandling() {
+        const fallbackImage = "https://placehold.co/400x300/10b981/ffffff?text=Brak+Zdj%C4%99cia";
+        this.ui.left.img.onerror = () => { this.ui.left.img.src = fallbackImage; };
+        this.ui.right.img.onerror = () => { this.ui.right.img.src = fallbackImage; };
     },
 
     getRandom(exclude) {
@@ -59,16 +67,9 @@ const game = {
     },
 
     getSimilar(baseItem) {
-        // Szukamy przedmiotu w zakresie 0.4x do 3.0x ceny bazy
         const min = baseItem.val * 0.4;
         const max = baseItem.val * 3.0;
-
-        const candidates = itemsDB.filter(item => 
-            item.name !== baseItem.name && 
-            item.val >= min && 
-            item.val <= max
-        );
-
+        const candidates = itemsDB.filter(item => item.name !== baseItem.name && item.val >= min && item.val <= max);
         if (candidates.length === 0) return this.getRandom(baseItem);
         return candidates[Math.floor(Math.random() * candidates.length)];
     },
@@ -103,7 +104,6 @@ const game = {
     reveal(correct) {
         this.ui.right.btns.classList.add('hidden');
         this.ui.right.res.classList.remove('hidden');
-        
         this.animateValue(this.ui.right.val, 0, this.state.right.val, 1000, () => {
             if (correct) {
                 this.ui.right.val.style.color = "#10b981";
