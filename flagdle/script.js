@@ -38,14 +38,12 @@ const allCountries = {
     "ZW": ["Zimbabwe"], "AE": ["Zjednoczone Emiraty Arabskie"]
 };
 
-// PODZIAŁ NA KONTYNENTY (Ręcznie wyselekcjonowane kody)
 const europeCodes = ["AL","AD","AT","BY","BE","BA","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IS","IE","IT","LV","LI","LT","LU","MT","MD","MC","ME","NL","MK","NO","PL","PT","RO","RU","SM","RS","SK","SI","ES","SE","CH","UA","GB","VA"];
 const asiaCodes = ["AF","AM","AZ","BH","BD","BT","BN","KH","CN","GE","IN","ID","IR","IQ","IL","JP","JO","KZ","KW","KG","LA","LB","MY","MV","MN","MM","NP","KP","KR","OM","PK","PH","QA","SA","SG","LK","SY","TJ","TH","TL","TR","TM","AE","UZ","VN","YE"];
 const africaCodes = ["DZ","AO","BJ","BW","BF","BI","CM","CV","CF","TD","KM","CG","CD","DJ","EG","GQ","ER","SZ","ET","GA","GM","GH","GN","GW","CI","KE","LS","LR","LY","MG","MW","ML","MR","MU","MA","MZ","NA","NE","NG","RW","ST","SN","SC","SL","SO","ZA","SS","SD","TZ","TG","TN","UG","ZM","ZW"];
 const americasCodes = ["AG","AR","BS","BB","BZ","BO","BR","CA","CL","CO","CR","CU","DM","DO","EC","SV","GD","GT","GY","HT","HN","JM","MX","NI","PA","PY","PE","KN","LC","VC","SR","TT","US","UY","VE"];
 const oceaniaCodes = ["AU","FJ","KI","MH","FM","NR","NZ","PW","PG","WS","SB","TO","TV","VU"];
 
-// Definicja Tierów (Trudność)
 const tier1Codes = ["PL", "DE", "FR", "IT", "ES", "GB", "US", "JP", "CN", "RU", "BR", "CA", "AU", "IN", "GR", "TR", "EG", "UA", "CH", "SE"];
 const tier2Codes = ["MX", "AR", "NL", "BE", "PT", "NO", "FI", "CZ", "KR", "ZA", "SA", "IR", "ID", "TH", "VN", "RO", "HU", "DK", "AT", "IE", "NZ", "CL", "CO", "PE", "VE", "MA", "DZ", "NG", "KE", "PK", "BD", "PH", "MY", "IS", "HR", "RS", "BG", "SK"];
 const tier3Codes = ["KZ", "UZ", "TM", "KG", "TJ", "MN", "NP", "BT", "LA", "KH", "MM", "LK", "SY", "JO", "LB", "KW", "QA", "AE", "OM", "YE", "LY", "TN", "SD", "SS", "ET", "SO", "UG", "RW", "TZ", "ZM", "ZW", "MZ", "AO", "NA", "BW", "CM", "SN", "GH", "CI", "BF", "ML", "NE", "TD", "CU", "JM", "HT", "DO", "GT", "HN", "SV", "NI", "CR", "PA", "BO", "PY", "UY", "GE", "AM", "AZ", "MD", "BY", "EE", "LV", "LT", "AL", "MK", "BA", "ME"];
@@ -59,18 +57,15 @@ function getSubset(codesArray) {
 }
 
 const countriesData = {
-    // Trudność
     easy: getSubset(tier1Codes),
     hard: getSubset([...tier1Codes, ...tier2Codes]),
     pro: getSubset([...tier2Codes, ...tier3Codes]),
     expert: getSubset([...tier3Codes, ...tier4Codes]),
-    
-    // Kontynenty
     europa: getSubset(europeCodes),
     azja: getSubset(asiaCodes),
     afryka: getSubset(africaCodes),
-    ameryki: getSubset([...americasCodes, ...oceaniaCodes]), // Łączymy Ameryki i Oceanię jako "Reszta Świata"
-    swiat: getSubset(Object.keys(allCountries)) // Wszystkie
+    ameryki: getSubset([...americasCodes, ...oceaniaCodes]),
+    swiat: getSubset(Object.keys(allCountries))
 };
 
 /* --- UI --- */
@@ -120,10 +115,8 @@ const ui = {
     },
 
     updateBlur(pct, isGray) {
-        const px = (pct / 2); 
-        let filter = `blur(${px}px)`;
-        if (isGray) filter += ' grayscale(100%)';
-        this.elements.flag.style.filter = filter;
+        // ZMIANA: W tej wersji gry wyłączamy nakładanie filtrów
+        this.elements.flag.style.filter = 'none';
     },
 
     setDots(total, used) {
@@ -163,7 +156,7 @@ const game = {
     config: { maxTries: 6, maxRounds: 8 },
     state: { 
         mode: null, round: 1, tries: 0, streak: 0, score: 0, 
-        currentCode: null, blurPct: 40, countriesList: [], recordBroken: false 
+        currentCode: null, blurPct: 0, countriesList: [], recordBroken: false 
     },
     countryNames: [],
 
@@ -206,7 +199,7 @@ const game = {
 
         this.state.currentCode = this.state.countriesList[this.state.round - 1];
         this.state.tries = 0;
-        this.state.blurPct = 40;
+        this.state.blurPct = 0; // ZMIANA: Brak blura od początku
 
         ui.elements.input.value = '';
         ui.elements.input.disabled = false;
@@ -222,7 +215,7 @@ const game = {
         ui.elements.progressBar.style.width = `${progressPct}%`;
 
         ui.elements.flag.style.opacity = '0';
-        ui.updateBlur(this.state.blurPct, this.state.mode === 'expert');
+        ui.updateBlur(0, false); // ZMIANA: Zawsze 0 blura
 
         const newSrc = `https://flagsapi.com/${this.state.currentCode}/flat/64.png`;
         ui.elements.flag.src = newSrc;
@@ -278,11 +271,10 @@ const game = {
                 ui.elements.streak.textContent = 0;
                 this.nextRoundDelay();
             } else {
-                ui.elements.msg.textContent = "Źle! Blur maleje...";
+                ui.elements.msg.textContent = "Źle! Spróbuj ponownie.";
                 ui.elements.msg.style.color = "var(--warning)";
                 ui.shakeInput();
-                this.state.blurPct = Math.max(0, this.state.blurPct - 8);
-                ui.updateBlur(this.state.blurPct, this.state.mode === 'expert');
+                // Brak zmiany blura tutaj
             }
         }
     },
