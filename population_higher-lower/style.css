@@ -380,93 +380,63 @@ h1 {
     }
 }
 
-@media (max-width: 1024px) {
-    .glass-panel {
-        max-width: 95%;
-        padding: 2.5rem;
-    }
-
-    h1 {
-        font-size: 3rem;
-    }
-}
 
 @media (max-width: 900px) {
     .glass-panel {
-        padding: 2rem;
+        width: 95%;
+        padding: 1.5rem;
+        margin-top: 50px;
     }
 
     .game-board {
         flex-direction: column;
-        gap: 40px;
+        gap: 30px;
+        padding: 15px;
+        min-height: auto;
     }
 
+    /* VS Circle mobile fix */
     .vs-circle {
-        top: 48%;
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin: -15px auto;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
     }
 
     .country-name {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         min-height: auto;
-    }
-
-    .flag-img {
-        width: 100px;
-    }
-
-    h1 {
-        font-size: 2.5rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .glass-panel {
-        padding: 1.5rem 1rem;
-        border-radius: 20px;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    .subtitle {
-        font-size: 1rem;
-    }
-
-    .game-board {
-        padding: 15px;
-        gap: 20px;
-        min-height: auto;
-    }
-
-    .country-box {
-        padding: 10px;
-    }
-
-    .flag-img {
-        width: 80px;
         margin-bottom: 15px;
     }
 
-    .country-name {
-        font-size: 1.3rem;
-        margin-bottom: 10px;
+    .flag-img {
+        width: 120px;
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
     }
 
     .stat-container {
+        min-height: 100px;
         padding: 15px;
-        min-height: 120px;
     }
 
     .stat-value {
         font-size: 2rem;
     }
 
-    .vs-circle {
-        width: 50px;
-        height: 50px;
-        font-size: 1rem;
-        top: 48.5%;
+    .question {
+        display: none;
+    }
+
+    .btns-row {
+        gap: 10px;
     }
 
     .btn-guess {
@@ -474,21 +444,6 @@ h1 {
         font-size: 1rem;
     }
 
-    .footer-stats {
-        gap: 20px;
-        padding-top: 20px;
-    }
-
-    .stat-pill {
-        font-size: 1.1rem;
-    }
-
-    .highlight,
-    .gold-text {
-        font-size: 1.3rem;
-    }
-
-    /* Home btn mobile override if needed */
     .btn-home {
         top: 15px;
         left: 15px;

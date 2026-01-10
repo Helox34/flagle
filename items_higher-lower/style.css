@@ -398,95 +398,65 @@ h1 {
     animation: popIn 0.4s ease;
 }
 
-@media (max-width: 1024px) {
-    .glass-panel {
-        max-width: 95%;
-        padding: 2.5rem;
-    }
 
-    h1 {
-        font-size: 3rem;
-    }
-}
-
+/* Responsywność */
 @media (max-width: 900px) {
     .glass-panel {
-        padding: 2rem;
         width: 95%;
+        padding: 1.5rem;
+        margin-top: 50px;
     }
 
     .game-board {
         flex-direction: column;
-        gap: 40px;
-        padding: 20px;
+        gap: 30px;
+        padding: 15px;
+        min-height: auto;
     }
 
+    /* VS Circle fix for mobile - positioning it in flow */
     .vs-circle {
-        top: 48%;
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin: -15px auto;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
     }
 
     .item-name {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         min-height: auto;
-    }
-
-    .img-container {
-        height: 200px;
-    }
-
-    h1 {
-        font-size: 2.5rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .glass-panel {
-        padding: 1.5rem 1rem;
-        border-radius: 20px;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    .subtitle {
-        font-size: 1rem;
-    }
-
-    .game-board {
-        padding: 15px;
-        gap: 20px;
-        min-height: auto;
-    }
-
-    .country-box {
-        padding: 10px;
+        margin-bottom: 15px;
     }
 
     .img-container {
         height: 160px;
-        margin-bottom: 15px;
+        padding: 10px;
     }
 
-    .item-name {
-        font-size: 1.4rem;
-        margin-bottom: 10px;
+    h1 {
+        font-size: 2.2rem;
     }
 
     .stat-container {
+        min-height: 100px;
         padding: 15px;
-        min-height: 120px;
     }
 
     .stat-value {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
-    .vs-circle {
-        width: 50px;
-        height: 50px;
-        font-size: 1rem;
-        top: 48.5%;
+    .question {
+        display: none;
+    }
+
+    /* Hide "costs..." label to save space if needed, or keep small */
+    .btns-row {
+        gap: 10px;
     }
 
     .btn-guess {
@@ -494,21 +464,6 @@ h1 {
         font-size: 1rem;
     }
 
-    .footer-stats {
-        gap: 20px;
-        padding-top: 20px;
-    }
-
-    .stat-pill {
-        font-size: 1.1rem;
-    }
-
-    .highlight,
-    .gold-text {
-        font-size: 1.3rem;
-    }
-
-    /* Home btn mobile override if needed */
     .btn-home {
         top: 15px;
         left: 15px;
